@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title> </title>
+</head>
+<body>
+
+	<p> <%= link_to("Create New Entry" , :controller => 'students' , :action => 'new') %> <br/> </p>
+
+<%= @students.each do |s| %>
+<p> Title : <%= s.title %> <br/> </p>
+<p> First Name : <%= s.first_name %> <br/> </p>
+<p> Last Name : <%= s.last_name %> <br/> </p>
+<p> Age : <%= s.age %> <br/> </p>
+<p> Stream : <%= s.stream %> <br/> </p>
+<p> Address : <%= s.Address %> <br/> </p>
+<p> Description : <%= s.description %> <br/> </p>
+
+ <p>  <%= link_to 'Delete Entry', student_path(s), method: :delete, data: { confirm: 'Are you sure?' } %> ||
+
+
+
+      <%= link_to("Edit", :controller => 'students', :action => 'edit', :id => s.id ) %>  ||
+
+     <%= link_to("Show" , :controller => 'students' , :action => 'show' , :id => s.id ) %> 
+ </p>
+
+<% end %>
+
+
+</body>
+</html>
+
